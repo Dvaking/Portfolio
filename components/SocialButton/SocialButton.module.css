@@ -2,10 +2,9 @@
 .animatedButton {
   position: relative;
   display: inline-block;
-  padding: 12px 24px;
+  padding: 12px 15px;
   border: none;
   font-size: 16px;
-  background-color: #2B282B;
   border-radius: 100px;
   font-weight: 600;
   color: #ffffff40;
@@ -21,7 +20,6 @@
   transform: translate(-50%, -50%);
   width: 20px;
   height: 20px;
-  background-color: #2196F3;
   border-radius: 50%;
   opacity: 0;
   transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
@@ -45,5 +43,3 @@
   height: 150px;
   opacity: 1;
 }
-
-
