@@ -1,5 +1,5 @@
 'use client';
-import styles from './SocialButton.module.css';
+import styles from '@/styles/socialButton.module.css';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';

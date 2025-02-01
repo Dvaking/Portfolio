@@ -1,10 +1,19 @@
-import { Card } from '@/components/Card';
-import Image from 'next/image';
+import { ProjectCard } from '@/components';
+import { Projects } from './project';
 
-export default function Home() {
+export default function ProjectPage() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 20, marginTop: 20 }}>
-      <Card>Project page</Card>
+      {Projects.map(project => (
+        <ProjectCard
+          key={project.title}
+          demoLink={project.demoLink}
+          description={project.description}
+          githubLink={project.githubLink}
+          image={project.image}
+          title={project.title}
+        />
+      ))}
     </div>
   );
 }

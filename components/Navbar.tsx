@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import styles from './Navbar.module.css';
+import styles from '@/styles/navbar.module.css';
 import Image from 'next/image';
 
 import { SocialButton } from '@components';

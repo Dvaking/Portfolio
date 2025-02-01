@@ -13,6 +13,7 @@ export function Card({ children }: CardProps) {
         padding: 20,
         borderRadius: 10,
         boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
+        margin: '10px 30px',
       }}>
       {children}
     </div>
