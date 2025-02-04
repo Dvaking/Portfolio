@@ -1,0 +1,7 @@
+.boxIcon {
+  border: solid 2px cyan;
+  border-radius: 10px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}

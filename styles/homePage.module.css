@@ -1,16 +1,44 @@
-.page {
-  background-image: url('/font.png');
-  background-size: 'cover';
-  background-repeat: 'no-repeat';
-  background-position: 'center';
-  height: '100vh';
-  display: 'flex';
-  justify-content: 'center';
-  align-items: 'center';
+.header {
+  background-image: url('/font.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.text {
-  color: '#ededed';
-  text-align: 'center';
-  filter: 'none';
+.headerContent {
+  color: #ededed;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20;
+}
+
+.loadingContainer {
+  position: relative;
+  width: 100px;
+  height: 5px;
+  background-color: #150c23;
+  overflow: hidden;
+}
+
+.loadingBar {
+  position: absolute;
+  width: 40px;
+  height: 5px;
+  background-color: cyan;
+}
+
+@keyframes slide {
+  0% {
+    left: -30px;
+  }
+  100% {
+    left: 100%;
+  }
 }
