@@ -3,8 +3,11 @@ import Image from 'next/image';
 import styles from '@/styles/homePage.module.css';
 import { InformationBox } from '@/components';
 import { homeInfo } from '@/utils/homeInfo';
+import { useMediaQuery } from 'react-responsive';
 
 export default function Home() {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+
   return (
     <div>
       <div className={styles.header}>
@@ -15,10 +18,7 @@ export default function Home() {
               alt={'profilePicture'}
               width={200}
               height={200}
-              style={{
-                borderRadius: 100,
-                border: 'solid 4px #ededed',
-              }}
+              className={styles.profilePicture}
             />
           </div>
           <div>
@@ -27,61 +27,28 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div
-        style={{
-          backgroundColor: '#110229',
-          width: '100%',
-          height: '40vh',
-          display: 'flex',
-          flexDirection: 'row',
-        }}>
-        <div
-          style={{
-            width: '30%',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}>
-          <div style={{ marginLeft: '20%', justifyContent: 'center', alignItems: 'center' }}>
-            <div>
-              <h3>SHORTLY ABOUT ME</h3>
-              <h1>WHO I AM ?</h1>
-            </div>
-            <div className={styles.loadingContainer}></div>
-            <div className={styles.loadingBar}></div>
-            <div style={{ marginTop: 20, width: '80%' }}>
-              <p>
-                My name is Marc, I'm a developer and a student at EPITECH Technology, where I'm
-                learning and perfecting my computer skills, both technically and professionally.
-                Always looking for new challenges, I'm motivated by the desire to learn and
-                constantly evolve.
-              </p>
-            </div>
-          </div>
+
+      <div className={`${styles.container} ${isMobile ? styles.mobile : ''}`}>
+        <div className={`${styles.textSection} ${isMobile ? styles.mobile : ''}`}>
+          <h3>Shortly About Me</h3>
+          <h1>WHO I AM?</h1>
+          <div className={styles.separator}></div>
+          <p>
+            My name is Marc, I'm a developer and a student at EPITECH Technology, where I'm learning
+            and perfecting my computer skills, both technically and professionally. Always looking
+            for new challenges, I'm motivated by the desire to learn and constantly evolve.
+          </p>
         </div>
 
-        <div
-          style={{
-            width: '70%',
-            display: 'flex',
-            flexDirection: 'row',
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-            alignItems: 'center',
-            padding: '5vh',
-            gap: '5vh',
-          }}>
+        <div className={`${styles.infoSection} ${isMobile ? styles.mobile : ''}`}>
           {homeInfo.map((info, index) => (
-            <div style={{ width: 'calc(48% - 2.5vh)' }}>
-              <InformationBox
-                key={index}
-                title={info.title}
-                description={info.description}
-                icon={info.icon}
-                link={info.link}
-              />
-            </div>
+            <InformationBox
+              description={info.description}
+              icon={info.icon}
+              title={info.title}
+              isMobile={isMobile}
+              key={index}
+            />
           ))}
         </div>
       </div>

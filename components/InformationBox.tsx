@@ -6,22 +6,34 @@ interface InformationBoxProps {
   description: string;
   icon: string;
   link?: string;
+  isMobile?: boolean;
 }
 
-export function InformationBox({description, icon, link, title}: InformationBoxProps) {
+export function InformationBox({ description, icon, link, title, isMobile }: InformationBoxProps) {
   return (
-    <div style={{ gap: 20 }}>
-      <Image
-        className={styles.boxIcon}
-        src={icon}
-        alt={'profilePicture'}
-        width={60}
-        height={60}
-      />
-      <h2>{title}</h2>
-      <text>
-        {description}
-      </text>
+    <div
+      style={{
+        width: isMobile ? '100%' : '45%',
+        display: 'flex',
+        gap: '2vh',
+        flexDirection: 'column',
+        marginTop: '1vh',
+      }}>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: isMobile ? 'center' : 'left',
+          borderRadius: '5px',
+        }}>
+        <Image src={icon} className={styles.boxIcon} alt={title} width={60} height={60} />
+      </div>
+      <div style={{ textAlign: isMobile ? 'center' : 'left' }}>
+        <h3 style={{ marginBottom: 5, fontSize: '1.1rem' }}>{title}</h3>
+        <p style={{ fontSize: '0.9rem', color: '#BBBBBB', whiteSpace: 'pre-wrap' }}>
+          {description}
+        </p>
+      </div>
     </div>
   );
 }
