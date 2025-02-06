@@ -1,13 +1,13 @@
 'use client';
 
 import styles from '@/styles/Components/pinnedRepositoryComponent.module.css';
-import { InformationBox, DefaultButton } from '@/components';
-import { homeInfo } from '@/utils/homeInfo';
+import { DefaultButton } from '@/components';
 import { useRouter } from 'next/navigation';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { useEffect, useState } from 'react';
 import { Repositories } from '@/types/github';
 import { fetchPinnedRepos } from '@/utils/github';
+import { PinnedCard } from './Cards/PinnedCard';
 
 interface PinnedRepositoryProps {
   isMobile: boolean;
@@ -18,16 +18,11 @@ export function PinnedRepository({ isMobile }: PinnedRepositoryProps) {
 
   const [loading, setLoading] = useState(true);
   const [repos, setRepos] = useState<Repositories[]>([]);
+  const [error, setError] = useState('');
 
-
-   useEffect(() => {
-     fetchPinnedRepos({ setError, setLoading, setRepositories: setRepos });
-   }, []);
-
-  console.log(repos);
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  useEffect(() => {
+    fetchPinnedRepos({ setError, setLoading, setRepositories: setRepos });
+  }, []);
 
   return (
     <div className={`${styles.container} ${isMobile ? styles.mobile : ''}`}>
@@ -44,28 +39,39 @@ export function PinnedRepository({ isMobile }: PinnedRepositoryProps) {
             text='View on Github'
             onClick={() => window.open('https://github.com/Dvaking?tab=repositories')}
           />
-          <DefaultButton
-            color='#28214D'
-            text='View more project'
-            onClick={() => router.push('/project')}
-          />
         </div>
       </div>
 
       <div className={`${styles.infoSection} ${isMobile ? styles.mobile : ''}`}>
-        {homeInfo.map((info, index) => (
-          <InformationBox
-            description={info.description}
-            icon={info.icon}
-            title={info.title}
+        {loading ? (
+          <PinnedCard
+            name='Loading...'
+            description='Please wait while we fetch the data.'
+            buttonText='Loading'
             isMobile={isMobile}
-            key={index}
           />
-        ))}
+        ) : error || repos.length === 0 ? (
+          <PinnedCard
+            name='Error'
+            description='No repositories found.'
+            buttonText='Retry'
+            isMobile={isMobile}
+          />
+        ) : (
+          repos
+            .slice(0, 4)
+            .map(repo => (
+              <PinnedCard
+                key={repo.name}
+                buttonText='View More'
+                description={repo.description}
+                name={repo.name}
+                isMobile={isMobile}
+                onClick={() => window.open(repo.url)}
+              />
+            ))
+        )}
       </div>
     </div>
   );
-}
-function setError(arg0: string) {
-  throw new Error('Function not implemented.');
 }

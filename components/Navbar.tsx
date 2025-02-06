@@ -4,7 +4,7 @@ import styles from '@/styles/navbar.module.css';
 import Image from 'next/image';
 
 import { SocialButton } from '@components';
-import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedinIn, faGithub, faMailchimp } from '@fortawesome/free-brands-svg-icons';
 import { useAppContext } from '@/context/AppContext';
 
 const SocialLink = [
@@ -36,7 +36,7 @@ export function Navbar() {
             </Link>
           </li>
           <li className={styles.navItem}>
-            <Link href='/project'>Project</Link>
+            {/* <Link href='/project'>Project</Link> */}
           </li>
         </ul>
         <div style={{ display: 'flex', flexDirection: 'row', gap: '10px' }}>
