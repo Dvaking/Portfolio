@@ -1,6 +1,13 @@
 export * from './Navbar';
-export * from './SocialButton';
-export * from './TextEffect';
-export * from './Card';
-export * from './ProjectCard';
+export * from './Footerbar';
 export * from './InformationBox';
+
+
+// Folders Components
+export * from './Cards';
+export * from './Buttons';
+export * from './TextEffect';
+
+// Pages Components
+export * from './About'
+export * from './PinnedRepository';

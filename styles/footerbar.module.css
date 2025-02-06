@@ -1,0 +1,13 @@
+.footer {
+  background-color: #110229;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 50;
+  justify-content: space-between;
+}

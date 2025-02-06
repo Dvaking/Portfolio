@@ -1,11 +1,11 @@
 'use client';
-import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import styles from '@/styles/navbar.module.css';
 import Image from 'next/image';
 
 import { SocialButton } from '@components';
 import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { useAppContext } from '@/context/AppContext';
 
 const SocialLink = [
   {
@@ -17,18 +17,7 @@ const SocialLink = [
 ];
 
 export function Navbar() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    window.addEventListener('resize', handleResize);
-    handleResize(); // Initial check
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  const { isMobile } = useAppContext();
 
   return (
     <div className={styles.navbar}>
