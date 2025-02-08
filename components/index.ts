@@ -9,5 +9,4 @@ export * from './Buttons';
 export * from './TextEffect';
 
 // Pages Components
-export * from './About'
-export * from './PinnedRepository';
+export * from './Pages';

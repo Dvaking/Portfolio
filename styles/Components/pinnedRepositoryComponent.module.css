@@ -61,6 +61,8 @@
 .infoSection.mobile {
   width: 100%;
   justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
 @keyframes slide {

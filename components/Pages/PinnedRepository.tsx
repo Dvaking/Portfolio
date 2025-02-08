@@ -2,19 +2,17 @@
 
 import styles from '@/styles/Components/pinnedRepositoryComponent.module.css';
 import { DefaultButton } from '@/components';
-import { useRouter } from 'next/navigation';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { useEffect, useState } from 'react';
 import { Repositories } from '@/types/github';
 import { fetchPinnedRepos } from '@/utils/github';
-import { PinnedCard } from './Cards/PinnedCard';
+import { PinnedCard } from '@/components';
 
 interface PinnedRepositoryProps {
   isMobile: boolean;
 }
 
 export function PinnedRepository({ isMobile }: PinnedRepositoryProps) {
-  const router = useRouter();
 
   const [loading, setLoading] = useState(true);
   const [repos, setRepos] = useState<Repositories[]>([]);

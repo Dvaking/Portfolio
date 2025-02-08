@@ -4,17 +4,8 @@ import styles from '@/styles/navbar.module.css';
 import Image from 'next/image';
 
 import { SocialButton } from '@components';
-import { faLinkedinIn, faGithub, faMailchimp } from '@fortawesome/free-brands-svg-icons';
 import { useAppContext } from '@/context/AppContext';
-
-const SocialLink = [
-  {
-    icon: faLinkedinIn,
-    link: 'https://www.linkedin.com/in/marc-mendia/',
-    backgroundColor: '#0077B5',
-  },
-  { icon: faGithub, link: 'https://github.com/Dvaking', backgroundColor: '#333' },
-];
+import { SocialLink } from '@/utils/social';
 
 export function Navbar() {
   const { isMobile } = useAppContext();
