@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { Navbar, FooterBar } from '@components';
 import { AppProvider } from '@/context/AppContext';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import '@/styles/globals.css';
 
 const geistSans = Geist({
@@ -29,6 +30,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <AppProvider>
           <Navbar />
+          <SpeedInsights />
           {children}
           <FooterBar />
         </AppProvider>
