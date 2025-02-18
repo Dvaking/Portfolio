@@ -6,3 +6,83 @@
 .image:hover {
   transform: scale(1.1);
 }
+.container {
+  background-color: #110229;
+  width: 100%;
+  padding: 5vh 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.container.mobile {
+  flex-direction: column;
+  justify-content: center;
+  gap: 5vh;
+}
+
+.textSection {
+  width: 35%;
+  text-align: left;
+  color: #ffffff;
+}
+
+
+.textSection.mobile {
+  width: 100%;
+  text-align: center;
+}
+
+.textSection h3 {
+  margin-bottom: 10px;
+  color: #00e6e6;
+  text-transform: uppercase;
+}
+
+.textSection h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.textSection .separator {
+  width: 50px;
+  height: 4px;
+  background-color: #00e6e6;
+  margin-bottom: 20px;
+}
+
+.textSection p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.infoSection {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 4vh;
+}
+
+.infoSection.mobile {
+  width: 100%;
+  justify-content: center;
+}
+
+@keyframes slide {
+  0% {
+    left: -30px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .separator {
+    display: block;
+    margin: 0 auto;
+  }
+}

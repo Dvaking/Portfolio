@@ -1,4 +1,5 @@
 .container {
+  position: relative;
   background-color: #110229;
   width: 100%;
   padding: 5vh 10%;
@@ -6,9 +7,28 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  gap: 20;
-  border-radius: 20;
+  gap: 20px;
+  border-radius: 20px;
+  transition: transform 0.3s ease-in-out;
+  overflow: hidden;
+}
 
+.container:hover {
+  transform: scale(1.05);
+}
+
+.backgroundIcon {
+  position: absolute;
+  bottom: 10px;
+  right: 30px;
+  font-size: 150px;
+  color:#28214D;
+  z-index: 0;
+}
+
+.container:hover .backgroundIcon {
+  opacity: 1;
+  transform: scale(1.2);
 }
 
 
@@ -21,6 +41,7 @@
 .textSection {
   text-align: left;
   color: #ffffff;
+  z-index: 1;
 }
 
 
@@ -51,6 +72,7 @@
 .textSection p {
   font-size: 1rem;
   line-height: 1.5;
+  z-index: 10;
 }
 
 .infoSection {
