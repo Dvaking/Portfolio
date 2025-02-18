@@ -22,7 +22,7 @@
   bottom: 10px;
   right: 30px;
   font-size: 150px;
-  color:#28214D;
+  color: #28214d;
   z-index: 0;
 }
 
@@ -30,7 +30,6 @@
   opacity: 1;
   transform: scale(1.2);
 }
-
 
 .container.mobile {
   flex-direction: column;
@@ -43,7 +42,6 @@
   color: #ffffff;
   z-index: 1;
 }
-
 
 .textSection.mobile {
   width: 100%;
