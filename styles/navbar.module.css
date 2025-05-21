@@ -1,9 +1,15 @@
 .navbar {
   align-items: center;
-  background: #110229;
-  background-color: #110229;
+  background: #282f37;
+  background-color: #282f37;
+  padding: 12px 23px;
+  border-bottom: 2px solid #1a1f24;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 135px;
 }
-
 
 .navList {
   list-style: none;
@@ -34,4 +40,10 @@
 
 .colors {
   color: aqua;
+}
+
+.navbarTitle {
+  font-size: 30px;
+  font-weight: bolder;
+  color: #ddd;
 }

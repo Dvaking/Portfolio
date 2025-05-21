@@ -30,10 +30,10 @@ export function SocialButton({ icon }: SocialButtonProps) {
         onMouseEnter={() => setIsHovered(0)}
         onMouseLeave={() => setIsHovered(-1)}
         style={{
-          backgroundColor: isHovered === 0 ? icon.backgroundColor : '#2B282B',
+          backgroundColor: isHovered === 0 ? icon.backgroundColor : '#282f37',
         }}>
         <span>
-          <FontAwesomeIcon icon={icon.icon} color='white' fontSize='25px' />
+          <FontAwesomeIcon icon={icon.icon} color='white' fontSize='30px' />
         </span>
         <span style={{ backgroundColor: icon.backgroundColor }}></span>
       </button>

@@ -12,20 +12,12 @@ export default function Home() {
       <div className={styles.header}>
         <div className={styles.headerContent}>
           <div>
-            <Image
-              src={'/profilePicture.jpg'}
-              alt={'profilePicture'}
-              width={200}
-              height={200}
-              className={styles.profilePicture}
-            />
-          </div>
-          <div>
-            <h1>MARC MENDIA</h1>
-            <p>DÉVELOPPEUR, GAMER, STREAMER</p>
+
           </div>
         </div>
       </div>
+      {/* <text style={{ fontSize: 50 }}>MARC MENDIA</text>
+      <p>DÉVELOPPEUR, GAMER, STREAMER</p> */}
       <About isMobile={isMobile} />
       <PinnedRepository isMobile={isMobile} />
     </div>
